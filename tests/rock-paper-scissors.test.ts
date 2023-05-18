@@ -94,38 +94,32 @@ describe("createRockPaperScissors", () => {
 
       describe(' when player=scissors', () => {  
                  
-            it("should return `Player Wins`  when opponent=paper",()=>{
+        it("should return `Player Wins`  when opponent=paper",()=>{
                     
-                    
-              //Arrange
-              const sut = createRockPaperScissors()
-              const playerMove=Tool.Scissors
-              const opponentMove = Tool.Paper
+                  
+            //Arrange
+            const sut = createRockPaperScissors()
+            const playerMove=Tool.Scissors
+            const opponentMove = Tool.Paper
 
-              //Act 
-              const received = sut.play(playerMove,opponentMove)
-              const expected= Outcome.PlayerWins
+            //Act 
+            const received = sut.play(playerMove,opponentMove)
+            const expected= Outcome.PlayerWins
 
-              //Assert
-              expect(received).toEqual(expected)
+            //Assert
+            expect(received).toEqual(expected)
 
             
             })
 
-             it("should return `Player Loses`  when opponent=rock",()=>{
+        it("should return `Player Loses`  when opponent=rock",()=>{
                     
                     
-                      //Arrange
-                      const sut = createRockPaperScissors()
-
-                      //Act 
-                      const received = sut.play(Tool.Scissors,Tool.Rock)
-                      const expected= Outcome.PlayerLoses
-
-                      //Assert
-                      expect(received).toEqual(expected)
-
-            
+                 //Arrange
+                 const sut = createRockPaperScissors()                 //Act 
+                 const received = sut.play(Tool.Scissors,Tool.Rock)
+                 const expected= Outcome.PlayerLoses                 //Assert
+                 expect(received).toEqual(expected)           
             })
 
                  it("should return `Tie`  when opponent=rock",()=>{
