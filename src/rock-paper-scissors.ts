@@ -11,20 +11,35 @@ export enum Outcome{
 }
 
 export interface PropTypes{
-  play:(player:Tool,opponent:Tool)=>void;
+  play:(player:Tool,opponent:Tool)=>Outcome;
 }
 
+const getOutcome = (player:Tool,opponent:Tool):Outcome => {
+    
+  if(player===opponent)
+        return Outcome.Tie;
+      
+  switch(player){
+      case Tool.Rock:
+          if(opponent===Tool.Scissors)
+            return Outcome.PlayerWins
+      case Tool.Paper:
+          if(opponent===Tool.Rock)
+              return Outcome.PlayerWins
+          if(opponent===Tool.Scissors)
+              return Outcome.PlayerLoses          
+   }
+
+      return Outcome.Tie;
+}
 const createRockPaperScissors=():PropTypes=>{
 
   return{
-    play:(player:Tool,opponent:Tool)=>{
-      if(player===opponent)
-        return Outcome.Tie;
-      
-      if(opponent===Tool.Scissors)
-        return  Outcome.PlayerLoses;
-       
-       return Outcome.PlayerWins
+    play:(player:Tool,opponent:Tool):Outcome=>{
+
+      const outcome:Outcome =getOutcome(player,opponent)
+
+      return outcome;
     }
 
     }
