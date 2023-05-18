@@ -49,7 +49,7 @@ describe("createRockPaperScissors", () => {
         })
         
   describe(' when player=rock', () => {  
-        it("should return `Player Wins`  when opponent=paper",()=>{
+    it("should return `Player Wins`  when opponent=paper",()=>{
                 
         //Arrange
         const sut = createRockPaperScissors()
@@ -61,10 +61,10 @@ describe("createRockPaperScissors", () => {
         //Assert
         expect(received).toEqual(expected)
 
-            })
+        })
 
 
-        it("should return `Player Loses`  when opponent=scissors",()=>{
+    it("should return `Player Loses`  when opponent=scissors",()=>{
                 
               //Arrange
               const sut = createRockPaperScissors()

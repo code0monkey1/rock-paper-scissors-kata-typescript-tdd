@@ -20,6 +20,15 @@ interface Scenario{
   outcome:Outcome
  }
 
+ const scenarios:Scenario[] = [
+  {playerMove: Tool.Rock, opponentMove: Tool.Paper, outcome:Outcome.PlayerLoses},
+   {playerMove: Tool.Paper, opponentMove: Tool.Rock, outcome:Outcome.PlayerWins},
+  {playerMove: Tool.Scissors, opponentMove: Tool.Paper, outcome:Outcome.PlayerWins},
+  {playerMove: Tool.Paper, opponentMove: Tool.Scissors, outcome:Outcome.PlayerLoses},
+  {playerMove: Tool.Scissors, opponentMove: Tool.Rock, outcome:Outcome.PlayerLoses},
+  {playerMove: Tool.Rock, opponentMove: Tool.Scissors, outcome:Outcome.PlayerWins},
+ ]
+
 const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
     
   if(playerMove===opponentMove)
@@ -56,11 +65,11 @@ const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
 const createRockPaperScissors=():PropTypes=>{
 
   return{
-    play:(player:Tool,opponent:Tool):Outcome=>{
+    play:(playerMove:Tool,opponentMove:Tool):Outcome=>{
 
-      const outcome:Outcome =getOutcome(player,opponent)
+      const scenario:Scenario|undefined =scenarios.find(scenario => {scenario.playerMove===playerMove && scenario.opponentMove===opponentMove});
 
-      return outcome;
+       return scenario?scenario.outcome:Outcome.Tie;
     }
 
     }
