@@ -16,21 +16,22 @@ export interface PropTypes{
 
 const getOutcome = (player:Tool,opponent:Tool):Outcome => {
     
-  if(player===opponent)
-        return Outcome.Tie;
-      
   switch(player){
       case Tool.Rock:
           if(opponent===Tool.Scissors)
             return Outcome.PlayerWins
+          if(opponent===Tool.Paper)
+             return Outcome.PlayerLoses
       case Tool.Paper:
           if(opponent===Tool.Rock)
               return Outcome.PlayerWins
           if(opponent===Tool.Scissors)
-              return Outcome.PlayerLoses          
+              return Outcome.PlayerLoses
+      default:
+           return Outcome.Tie
+
    }
 
-      return Outcome.Tie;
 }
 const createRockPaperScissors=():PropTypes=>{
 

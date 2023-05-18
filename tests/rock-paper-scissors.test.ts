@@ -3,8 +3,9 @@ import createRockPaperScissors, { Outcome, Tool } from "../src/rock-paper-scisso
 describe("createRockPaperScissors", () => {
 
   describe("play", () => {
-
-        it("should return `Player Wins` when , player=paper and opponent=rock",()=>{
+        
+       describe(" when player=paper", () => {
+        it("should return `Player Wins` when opponent=rock",()=>{
           
             //Arrange
             const sut =createRockPaperScissors()
@@ -16,7 +17,7 @@ describe("createRockPaperScissors", () => {
             //Assert
               expect(received).toEqual(expected)
           })
-          it("should return `Player Loses` when player=paper and opponent=scissors",()=>{
+          it("should return `Player Loses` when opponent=scissors",()=>{
             
             //Arrange
             const sut = createRockPaperScissors()
@@ -30,7 +31,7 @@ describe("createRockPaperScissors", () => {
 
           })
 
-             it("should return `Tie` when player and opponent have the same tool ",()=>{
+             it("should return `Tie` when opponent=paper ",()=>{
             
             //Arrange
             const sut = createRockPaperScissors()
@@ -43,20 +44,26 @@ describe("createRockPaperScissors", () => {
             expect(received).toEqual(expected)
 
           })
-
-              it("should return `Player Wins`  when player=Rock and opponent=scissors",()=>{
             
-            //Arrange
-            const sut = createRockPaperScissors()
+        
+        })
+        
+        describe(' when player=rock', () => {  
+                  it("should return `Player Wins`  when opponent=scissors",()=>{
+                
+                //Arrange
+                const sut = createRockPaperScissors()
 
-            //Act 
-            const received = sut.play(Tool.Paper,Tool.Paper)
-            const expected= Outcome.Tie
+                //Act 
+                const received = sut.play(Tool.Paper,Tool.Paper)
+                const expected= Outcome.Tie
 
-            //Assert
-            expect(received).toEqual(expected)
+                //Assert
+                expect(received).toEqual(expected)
 
-          })
+              })
+
+        })
 
       })
 })
