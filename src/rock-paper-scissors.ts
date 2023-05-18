@@ -59,7 +59,7 @@ const createRockPaperScissors=():PropTypes=>{
     play:(playerMove:Tool,opponentMove:Tool):Outcome=>{
 
       const scenarioFound:Scenario|undefined =scenarios
-      .find(s=> s.playerMove===playerMove && s.opponentMove===opponentMove);
+                                                 .find(s=> s.playerMove===playerMove && s.opponentMove===opponentMove);
 
        return scenarioFound?scenarioFound.outcome:Outcome.Tie;
     }
