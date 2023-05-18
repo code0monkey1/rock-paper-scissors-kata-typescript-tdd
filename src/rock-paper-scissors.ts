@@ -5,14 +5,16 @@ export enum Tool{
 }
 
 export interface PropTypes{
-  play:(player_1:Tool,player_2:Tool)=>void;
+  play:(player:Tool,opponent:Tool)=>void;
 }
 
 const createRockPaperScissors=():PropTypes=>{
 
   return{
-    play:(player_1:Tool,player_2:Tool)=>{
-
+    play:(player:Tool,opponent:Tool)=>{
+       if(opponent===Tool.Scissors){
+        return "Player Loses"
+       }
        return "Player Wins"
     }
 
