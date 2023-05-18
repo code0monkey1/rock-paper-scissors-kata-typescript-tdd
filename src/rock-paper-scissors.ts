@@ -1,7 +1,7 @@
 export enum Tool{
   Rock="rock",
   Paper="paper",
-  Scissors="scissors"
+  Scissors="scissors",
 }
 
 export enum Outcome{
@@ -26,19 +26,23 @@ const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
               return Outcome.PlayerLoses
           if(opponentMove===Tool.Scissors)
               return Outcome.PlayerWins
+          break;
   
       case Tool.Paper:
           if(opponentMove===Tool.Rock)
               return Outcome.PlayerWins
           if(opponentMove===Tool.Scissors)
               return Outcome.PlayerLoses
-
+          break;
       case Tool.Scissors:
            if(opponentMove===Tool.Paper)
              return Outcome.PlayerWins
             if(opponentMove===Tool.Rock)
-              return Outcome.PlayerLoses   
-      
+              return Outcome.PlayerLoses 
+            break;
+       default:
+           assertNever(playerMove);
+       
       }
 
    return Outcome.Tie
