@@ -11,33 +11,33 @@ export enum Outcome{
 }
 
 export interface PropTypes{
-  play:(player:Tool,opponent:Tool)=>Outcome;
+  play:(playerMove:Tool,opponentMove:Tool)=>Outcome;
 }
 
-const getOutcome = (player:Tool,opponent:Tool):Outcome => {
+const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
     
-  if(player===opponent)
+  if(playerMove===opponentMove)
      return Outcome.Tie;
 
-  switch(player){
+  switch(playerMove){
 
       case Tool.Rock:
-         if(opponent===Tool.Paper)
+         if(opponentMove===Tool.Paper)
               return Outcome.PlayerLoses
-          if(opponent===Tool.Scissors)
+          if(opponentMove===Tool.Scissors)
               return Outcome.PlayerWins
   
       case Tool.Paper:
-          if(opponent===Tool.Rock)
+          if(opponentMove===Tool.Rock)
               return Outcome.PlayerWins
-          if(opponent===Tool.Scissors)
+          if(opponentMove===Tool.Scissors)
               return Outcome.PlayerLoses
 
       case Tool.Scissors:
-           if(opponent===Tool.Paper)
+           if(opponentMove===Tool.Paper)
              return Outcome.PlayerWins
-            if(opponent===Tool.Rock)
-              return Outcome.PlayerLoses            
+            if(opponentMove===Tool.Rock)
+              return Outcome.PlayerLoses   
       
       }
 
