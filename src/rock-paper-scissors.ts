@@ -18,20 +18,23 @@ const getOutcome = (player:Tool,opponent:Tool):Outcome => {
     
   switch(player){
       case Tool.Rock:
-          if(opponent===Tool.Scissors)
-            return Outcome.PlayerWins
-          if(opponent===Tool.Paper)
-             return Outcome.PlayerLoses
-          else
-             return Outcome.Tie
+          switch(opponent){
+              case Tool.Paper:
+                 return Outcome.PlayerLoses
+              case Tool.Scissors:
+                 return Outcome.PlayerWins
+              default:
+                return Outcome.Tie
+          }
+  
 
       case Tool.Paper:
           if(opponent===Tool.Rock)
               return Outcome.PlayerWins
           if(opponent===Tool.Scissors)
               return Outcome.PlayerLoses
-          // else
-          //      return Outcome.Tie
+          else
+               return Outcome.Tie
 
       case Tool.Scissors:
            if(opponent===Tool.Paper)
