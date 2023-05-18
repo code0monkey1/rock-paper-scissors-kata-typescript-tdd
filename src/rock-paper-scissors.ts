@@ -20,12 +20,12 @@ const getOutcome = (player:Tool,opponent:Tool):Outcome => {
      return Outcome.Tie;
 
   switch(player){
-    
+
       case Tool.Rock:
          if(opponent===Tool.Paper)
-              return Outcome.PlayerWins
-          if(opponent===Tool.Scissors)
               return Outcome.PlayerLoses
+          if(opponent===Tool.Scissors)
+              return Outcome.PlayerWins
   
       case Tool.Paper:
           if(opponent===Tool.Rock)
