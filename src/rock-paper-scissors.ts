@@ -45,8 +45,7 @@ const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
        
       }
 
-   return Outcome.Tie
-
+      return Outcome.Tie;
 }
 const createRockPaperScissors=():PropTypes=>{
 
