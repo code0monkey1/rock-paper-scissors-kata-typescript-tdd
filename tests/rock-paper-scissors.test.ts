@@ -4,8 +4,8 @@ describe("createRockPaperScissors", () => {
 
   describe("play", () => {
         
-       describe(" when player=paper", () => {
-        it("should return `Player Wins` when opponent=rock",()=>{
+    describe(" when player=paper", () => {
+      it("should return `Player Wins` when opponent=rock",()=>{
           
             //Arrange
             const sut =createRockPaperScissors()
@@ -17,7 +17,7 @@ describe("createRockPaperScissors", () => {
             //Assert
               expect(received).toEqual(expected)
           })
-          it("should return `Player Loses` when opponent=scissors",()=>{
+      it("should return `Player Loses` when opponent=scissors",()=>{
             
             //Arrange
             const sut = createRockPaperScissors()
@@ -31,7 +31,7 @@ describe("createRockPaperScissors", () => {
 
           })
 
-             it("should return `Tie` when opponent=paper ",()=>{
+      it("should return `Tie` when opponent=paper ",()=>{
             
             //Arrange
             const sut = createRockPaperScissors()
@@ -48,8 +48,8 @@ describe("createRockPaperScissors", () => {
         
         })
         
-      describe(' when player=rock', () => {  
-                  it("should return `Player Wins`  when opponent=paper",()=>{
+  describe(' when player=rock', () => {  
+        it("should return `Player Wins`  when opponent=paper",()=>{
                 
                 //Arrange
                 const sut = createRockPaperScissors()
@@ -61,10 +61,10 @@ describe("createRockPaperScissors", () => {
                 //Assert
                 expect(received).toEqual(expected)
 
-              })
+        })
 
 
-                  it("should return `Player Loses`  when opponent=scissors",()=>{
+        it("should return `Player Loses`  when opponent=scissors",()=>{
                 
                 //Arrange
                 const sut = createRockPaperScissors()
@@ -76,9 +76,9 @@ describe("createRockPaperScissors", () => {
                 //Assert
                 expect(received).toEqual(expected)
 
-              })
+        })
 
-              it("should return `Tie` when opponent=Rock ",()=>{
+        it("should return `Tie` when opponent=Rock ",()=>{
                       
                       //Arrange
                       const sut = createRockPaperScissors()
@@ -90,7 +90,7 @@ describe("createRockPaperScissors", () => {
                       //Assert
                       expect(received).toEqual(expected)
 
-                    })
+              })
 
         })
 
