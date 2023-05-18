@@ -27,6 +27,10 @@ const getOutcome = (player:Tool,opponent:Tool):Outcome => {
               return Outcome.PlayerWins
           if(opponent===Tool.Scissors)
               return Outcome.PlayerLoses
+      // case Tool.Scissors:
+      //      if(opponent===Tool.Rock)
+               
+             
       default:
            return Outcome.Tie
 
