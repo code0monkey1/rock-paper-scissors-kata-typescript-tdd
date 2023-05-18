@@ -18,9 +18,12 @@ const createRockPaperScissors=():PropTypes=>{
 
   return{
     play:(player:Tool,opponent:Tool)=>{
-       if(opponent===Tool.Scissors){
+      if(player===opponent)
+        return Outcome.Tie;
+      
+      if(opponent===Tool.Scissors)
         return  Outcome.PlayerLoses;
-       }
+       
        return Outcome.PlayerWins
     }
 

@@ -30,6 +30,20 @@ describe("createRockPaperScissors", () => {
 
           })
 
+             it("should return `Tie` when player and opponent have the same tool ",()=>{
+            
+            //Arrange
+            const sut = createRockPaperScissors()
+
+            //Act 
+            const received = sut.play(Tool.Paper,Tool.Paper)
+            const expected= Outcome.Tie
+
+            //Assert
+            expect(received).toEqual(expected)
+
+          })
+
       })
 })
  
