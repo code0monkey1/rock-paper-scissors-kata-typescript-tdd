@@ -4,11 +4,20 @@ export enum Tool{
   Scissors="scissors"
 }
 
-const rockPaperScissors=(player1: Tool, player2: Tool)=>{
-
-    return "Player Wins";
-
+export interface PropTypes{
+  play:(player_1:Tool,player_2:Tool)=>void;
 }
 
+const createRockPaperScissors=():PropTypes=>{
 
-export default rockPaperScissors;
+  return{
+    play:(player_1:Tool,player_2:Tool)=>{
+
+       return "Player Wins"
+    }
+
+    }
+  }
+
+
+export default createRockPaperScissors;
