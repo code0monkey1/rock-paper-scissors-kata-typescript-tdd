@@ -14,6 +14,12 @@ export interface PropTypes{
   play:(playerMove:Tool,opponentMove:Tool)=>Outcome;
 }
 
+interface Scenario{
+  playerMove:Tool,
+  opponentMove:Tool,
+  outcome:Outcome
+ }
+
 const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
     
   if(playerMove===opponentMove)
