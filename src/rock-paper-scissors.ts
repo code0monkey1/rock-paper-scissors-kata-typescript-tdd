@@ -29,45 +29,13 @@ interface Scenario{
   {playerMove: Tool.Rock, opponentMove: Tool.Scissors, outcome:Outcome.PlayerWins},
  ]
 
-const getOutcome = (playerMove:Tool,opponentMove:Tool):Outcome => {
-    
-  if(playerMove===opponentMove)
-     return Outcome.Tie;
-
-  switch(playerMove){
-
-      case Tool.Rock:
-         if(opponentMove===Tool.Paper)
-              return Outcome.PlayerLoses
-          if(opponentMove===Tool.Scissors)
-              return Outcome.PlayerWins
-          break;
-  
-      case Tool.Paper:
-          if(opponentMove===Tool.Rock)
-              return Outcome.PlayerWins
-          if(opponentMove===Tool.Scissors)
-              return Outcome.PlayerLoses
-          break;
-      case Tool.Scissors:
-           if(opponentMove===Tool.Paper)
-             return Outcome.PlayerWins
-            if(opponentMove===Tool.Rock)
-              return Outcome.PlayerLoses 
-            break;
-       default:
-           assertNever(playerMove);
-       
-      }
-
-      return Outcome.Tie;
-}
 const createRockPaperScissors=():PropTypes=>{
 
   return{
     play:(playerMove:Tool,opponentMove:Tool):Outcome=>{
 
-      const scenario:Scenario|undefined =scenarios.find(scenario => {scenario.playerMove===playerMove && scenario.opponentMove===opponentMove});
+      const scenario:Scenario|undefined =scenarios
+      .find(s=> s.playerMove===playerMove && s.opponentMove===opponentMove);
 
        return scenario?scenario.outcome:Outcome.Tie;
     }
