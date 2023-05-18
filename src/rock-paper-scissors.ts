@@ -7,6 +7,7 @@ export enum Tool{
 export enum Outcome{
   PlayerWins="Player wins",
   PlayerLoses="Player loses",
+  Tie="Tie"
 }
 
 export interface PropTypes{
