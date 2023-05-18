@@ -21,12 +21,36 @@ interface Scenario{
  }
 
  const scenarios:Scenario[] = [
-  {playerMove: Tool.Rock, opponentMove: Tool.Paper, outcome:Outcome.PlayerLoses},
-  {playerMove: Tool.Paper, opponentMove: Tool.Rock, outcome:Outcome.PlayerWins},
-  {playerMove: Tool.Scissors, opponentMove: Tool.Paper, outcome:Outcome.PlayerWins},
-  {playerMove: Tool.Paper, opponentMove: Tool.Scissors, outcome:Outcome.PlayerLoses},
-  {playerMove: Tool.Scissors, opponentMove: Tool.Rock, outcome:Outcome.PlayerLoses},
-  {playerMove: Tool.Rock, opponentMove: Tool.Scissors, outcome:Outcome.PlayerWins}
+  {
+    playerMove: Tool.Rock,
+     opponentMove: Tool.Paper, 
+     outcome:Outcome.PlayerLoses
+  },
+  {
+    playerMove: Tool.Paper,
+     opponentMove: Tool.Rock, 
+     outcome:Outcome.PlayerWins
+  },
+  {
+    playerMove: Tool.Scissors,
+     opponentMove: Tool.Paper,
+      outcome:Outcome.PlayerWins
+  },
+  {
+    playerMove: Tool.Paper,
+     opponentMove: Tool.Scissors,
+      outcome:Outcome.PlayerLoses
+  },
+  {
+    playerMove: Tool.Scissors,
+    opponentMove: Tool.Rock,
+    outcome:Outcome.PlayerLoses
+    },
+  {
+    playerMove: Tool.Rock,
+     opponentMove: Tool.Scissors,
+      outcome:Outcome.PlayerWins
+  }
  ]
 
 const createRockPaperScissors=():PropTypes=>{
