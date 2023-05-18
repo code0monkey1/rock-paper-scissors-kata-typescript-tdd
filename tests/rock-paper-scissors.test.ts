@@ -1,4 +1,4 @@
-import createRockPaperScissors, { Tool } from "../src/rock-paper-scissors";
+import createRockPaperScissors, { Outcome, Tool } from "../src/rock-paper-scissors";
 
 describe("play", () => {
 
@@ -9,7 +9,7 @@ describe("play", () => {
    
     //Act
      const received=sut.play(Tool.Paper,Tool.Rock)
-     const expected="Player Wins";
+     const expected=Outcome.PlayerWins
    
      //Assert
        expect(received).toEqual(expected)
@@ -21,7 +21,7 @@ describe("play", () => {
 
     //Act 
     const received = sut.play(Tool.Paper,Tool.Scissors)
-    const expected="Player Loses"
+    const expected= Outcome.PlayerLoses
 
     //Assert
     expect(received).toEqual(expected)

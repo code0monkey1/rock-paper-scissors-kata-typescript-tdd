@@ -4,6 +4,11 @@ export enum Tool{
   Scissors="scissors"
 }
 
+export enum Outcome{
+  PlayerWins="Player wins",
+  PlayerLoses="Player loses",
+}
+
 export interface PropTypes{
   play:(player:Tool,opponent:Tool)=>void;
 }
@@ -13,9 +18,9 @@ const createRockPaperScissors=():PropTypes=>{
   return{
     play:(player:Tool,opponent:Tool)=>{
        if(opponent===Tool.Scissors){
-        return "Player Loses"
+        return  Outcome.PlayerLoses;
        }
-       return "Player Wins"
+       return Outcome.PlayerWins
     }
 
     }
