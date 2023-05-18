@@ -34,10 +34,10 @@ const createRockPaperScissors=():PropTypes=>{
   return{
     play:(playerMove:Tool,opponentMove:Tool):Outcome=>{
 
-      const scenario:Scenario|undefined =scenarios
+      const scenarioFound:Scenario|undefined =scenarios
       .find(s=> s.playerMove===playerMove && s.opponentMove===opponentMove);
 
-       return scenario?scenario.outcome:Outcome.Tie;
+       return scenarioFound?scenarioFound.outcome:Outcome.Tie;
     }
 
     }
