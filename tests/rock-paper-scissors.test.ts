@@ -112,8 +112,45 @@ describe("createRockPaperScissors", () => {
             
             })
 
+             it("should return `Player Loses`  when opponent=rock",()=>{
+                    
+                    
+                      //Arrange
+                      const sut = createRockPaperScissors()
+
+                      //Act 
+                      const received = sut.play(Tool.Scissors,Tool.Rock)
+                      const expected= Outcome.PlayerLoses
+
+                      //Assert
+                      expect(received).toEqual(expected)
+
+            
+            })
+
+                 it("should return `Player Wins`  when opponent=rock",()=>{
+                    
+                    
+                      //Arrange
+                      const sut = createRockPaperScissors()
+
+                      //Act 
+                      const received = sut.play(Tool.Scissors,Tool.Rock)
+                      const expected= Outcome.PlayerLoses
+
+                      //Assert
+                      expect(received).toEqual(expected)
+
+            
+            })
+
+
           
-                })
+             })
+
+              
+          
+            
 
       })
 })
