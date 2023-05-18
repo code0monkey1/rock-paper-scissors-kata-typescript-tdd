@@ -84,7 +84,7 @@ describe("createRockPaperScissors", () => {
                       const sut = createRockPaperScissors()
 
                       //Act 
-                      const received = sut.play(Tool.Paper,Tool.Paper)
+                      const received = sut.play(Tool.Rock,Tool.Rock)
                       const expected= Outcome.Tie
 
                       //Assert

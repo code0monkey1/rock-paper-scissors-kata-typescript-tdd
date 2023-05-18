@@ -22,20 +22,29 @@ const getOutcome = (player:Tool,opponent:Tool):Outcome => {
             return Outcome.PlayerWins
           if(opponent===Tool.Paper)
              return Outcome.PlayerLoses
+          else
+             return Outcome.Tie
+
       case Tool.Paper:
           if(opponent===Tool.Rock)
               return Outcome.PlayerWins
           if(opponent===Tool.Scissors)
               return Outcome.PlayerLoses
+          // else
+          //      return Outcome.Tie
+
       case Tool.Scissors:
            if(opponent===Tool.Paper)
              return Outcome.PlayerWins
-               
-             
-      default:
-           return Outcome.Tie
+            if(opponent===Tool.Rock)
+              return Outcome.PlayerLoses
+            // else
+            //    return Outcome.Tie
+              
+      
+      }
 
-   }
+   return Outcome.Tie
 
 }
 const createRockPaperScissors=():PropTypes=>{
