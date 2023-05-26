@@ -45,11 +45,11 @@ interface Scenario{
     playerMove: Tool.Scissors,
     opponentMove: Tool.Rock,
     outcome:Outcome.PlayerLoses
-    },
+   },
   {
     playerMove: Tool.Rock,
-     opponentMove: Tool.Scissors,
-      outcome:Outcome.PlayerWins
+    opponentMove: Tool.Scissors,
+    outcome:Outcome.PlayerWins
   }
  ]
 
@@ -59,7 +59,7 @@ const createRockPaperScissors=():PropTypes=>{
     play:(playerMove:Tool,opponentMove:Tool):Outcome=>{
 
       const scenarioFound:Scenario|undefined =scenarios
-                                                 .find(s=> s.playerMove===playerMove && s.opponentMove===opponentMove);
+      .find(s=> s.playerMove===playerMove && s.opponentMove===opponentMove);
 
        return scenarioFound?scenarioFound.outcome:Outcome.Tie;
     }

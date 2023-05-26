@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "code tour",
+  "steps": [
+    {
+      "title": "Introduction",
+      "description": "A simple rock paper scissors game : \n\nWe create a Outcome Interface "
+    }
+  ],
+  "ref": "main"
+}

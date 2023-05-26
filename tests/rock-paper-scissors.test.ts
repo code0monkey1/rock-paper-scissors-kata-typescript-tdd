@@ -92,7 +92,7 @@ describe("createRockPaperScissors", () => {
 
         })
 
-      describe(' when player=scissors', () => {  
+   describe(' when player=scissors', () => {  
                  
         it("should return `Player Wins`  when opponent=paper",()=>{
                     
@@ -122,7 +122,7 @@ describe("createRockPaperScissors", () => {
                  expect(received).toEqual(expected)           
             })
 
-                 it("should return `Tie`  when opponent=rock",()=>{
+        it("should return `Tie`  when opponent=rock",()=>{
                     
                     
                       //Arrange
@@ -136,15 +136,9 @@ describe("createRockPaperScissors", () => {
                       expect(received).toEqual(expected)
 
             
-            })
-
-
-          
+                 })
+         
              })
-
-              
-          
-            
 
       })
 })
